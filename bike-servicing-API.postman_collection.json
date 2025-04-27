@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "b6ec5f0d-8df5-4b76-8066-56980079b0f2",
+		"name": "bike-servicing-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33198516"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "create customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Maqbool Uddin\",\n    \"email\":\"maqbool@gmail.com\",\n    \"phone\":\"01478569874\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/customers"
+					},
+					"response": []
+				},
+				{
+					"name": "get all customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Bodor Uddin\",\n    \"email\":\"bodor@gmail.com\",\n    \"phone\":\"01478569874\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/customers"
+					},
+					"response": []
+				},
+				{
+					"name": "get customer by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Bodor Uddin\",\n    \"email\":\"bodor@gmail.com\",\n    \"phone\":\"01478569874\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/customers/1011850d-a31b-4685-a005-25f3cef383ed"
+					},
+					"response": []
+				},
+				{
+					"name": "update customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Bodor Uddin Batla\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/customers/1011850d-a31b-4685-a005-25f3cef383ed"
+					},
+					"response": []
+				},
+				{
+					"name": "delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Bodor Uddin Batla\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/customers/787886c3-0974-4f53-9b7b-5e3af1e62ac3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bike",
+			"item": [
+				{
+					"name": "add bike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"brand\":\"Yamaha\",\n    \"model\":\"R-15\",\n    \"year\":2025,\n    \"customerId\":\"1011850d-a31b-4685-a005-25f3cef383ed\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/bikes"
+					},
+					"response": []
+				},
+				{
+					"name": "get all bikes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"brand\":\"Yamaha\",\n    \"model\":\"fzs v2\",\n    \"year\":2025,\n    \"customerId\":\"55494b0a-8ee0-42b7-b52d-a509da6d937d\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/bikes"
+					},
+					"response": []
+				},
+				{
+					"name": "get bike by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"brand\":\"Yamaha\",\n    \"model\":\"fzs v2\",\n    \"year\":2025,\n    \"customerId\":\"55494b0a-8ee0-42b7-b52d-a509da6d937d\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/bikes/26230177-5e31-4db4-a605-52ed1301f677"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service-record",
+			"item": [
+				{
+					"name": "create service record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"bikeId\": \"26230177-5e31-4db4-a605-52ed1301f677\",\n  \"serviceDate\": \"2025-04-23T17:40:27+00:00\",\n  \"description\": \"change both tyre\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/services"
+					},
+					"response": []
+				},
+				{
+					"name": "get all service records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base-url}}/services"
+					},
+					"response": []
+				},
+				{
+					"name": "get service record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base-url}}/services/2082d78e-590e-4bc9-83fc-85b8204c04dd"
+					},
+					"response": []
+				},
+				{
+					"name": "mark service record as complete",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"completionDate\":\"2025-04-25T17:40:27+00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/services/2082d78e-590e-4bc9-83fc-85b8204c04dd/complete"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}

@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../../config/prisma.config";
 import ApiError from "../../errors/ApiError";
 import { IBike } from "./bike.interface";
-const prisma = new PrismaClient();
+
 export const addBikeService = async (bikeData: IBike) => {
   try {
     const bike = await prisma.bike.create({

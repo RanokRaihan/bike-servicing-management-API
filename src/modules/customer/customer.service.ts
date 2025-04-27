@@ -1,7 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../../config/prisma.config";
 import ApiError from "../../errors/ApiError";
-
-const prisma = new PrismaClient();
 
 export const createCustomerService = async (customerData: any) => {
   try {
@@ -9,10 +7,8 @@ export const createCustomerService = async (customerData: any) => {
       data: customerData,
     });
     return newCustomer;
-  } catch (err: unknown) {
-    const errorMessage =
-      err instanceof Error ? err.message : "Failed to create customer";
-    throw new ApiError(500, errorMessage);
+  } catch (err) {
+    throw err;
   }
 };
 
@@ -20,10 +16,8 @@ export const getAllCustomersService = async () => {
   try {
     const customers = await prisma.customer.findMany();
     return customers;
-  } catch (err: unknown) {
-    const errorMessage =
-      err instanceof Error ? err.message : "Failed to fetch customers";
-    throw new ApiError(500, errorMessage);
+  } catch (err) {
+    throw err;
   }
 };
 export const getCustomerByIdService = async (customerId: string) => {
@@ -35,10 +29,8 @@ export const getCustomerByIdService = async (customerId: string) => {
       throw new ApiError(404, "Customer not found");
     }
     return customer;
-  } catch (err: unknown) {
-    const errorMessage =
-      err instanceof Error ? err.message : "Failed to fetch customer";
-    throw new ApiError(500, errorMessage);
+  } catch (err) {
+    throw err;
   }
 };
 export const updateCustomerService = async (
@@ -51,10 +43,8 @@ export const updateCustomerService = async (
       data: customerData,
     });
     return updatedCustomer;
-  } catch (err: unknown) {
-    const errorMessage =
-      err instanceof Error ? err.message : "Failed to update customer";
-    throw new ApiError(500, errorMessage);
+  } catch (err) {
+    throw err;
   }
 };
 export const deleteCustomerService = async (customerId: string) => {
@@ -63,9 +53,7 @@ export const deleteCustomerService = async (customerId: string) => {
       where: { customerId: customerId },
     });
     return deletedCustomer;
-  } catch (err: unknown) {
-    const errorMessage =
-      err instanceof Error ? err.message : "Failed to delete customer";
-    throw new ApiError(500, errorMessage);
+  } catch (err) {
+    throw err;
   }
 };

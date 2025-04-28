@@ -11,11 +11,12 @@
   "license": "ISC",
   "author": "Ranok Raihan",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node ./dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc"
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "vercel-build": "echo hello",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",

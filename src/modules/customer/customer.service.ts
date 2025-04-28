@@ -38,6 +38,12 @@ export const updateCustomerService = async (
   customerData: any
 ) => {
   try {
+    const existingCustomer = await prisma.customer.findUnique({
+      where: { customerId: customerId },
+    });
+    if (!existingCustomer) {
+      throw new ApiError(404, "Customer not found!");
+    }
     const updatedCustomer = await prisma.customer.update({
       where: { customerId: customerId },
       data: customerData,

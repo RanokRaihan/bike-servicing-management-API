@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"Maqbool Uddin\",\n    \"email\":\"maqbool@gmail.com\",\n    \"phone\":\"01478569874\"\n}",
+							"raw": "{\n    \"name\":\"Moin Ali\",\n    \"email\":\"moin@gmail.com\",\n    \"phone\":\"01785458965\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,7 +65,7 @@
 								}
 							}
 						},
-						"url": "{{base-url}}/customers/1011850d-a31b-4685-a005-25f3cef383ed"
+						"url": "{{base-url}}/customers/78961635-96ac-43a2-8952-caeffb8560c7"
 					},
 					"response": []
 				},
@@ -76,14 +76,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"Bodor Uddin Batla\"\n   \n}",
+							"raw": "{\n    \"phone\":\"01587458235\"\n   \n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base-url}}/customers/1011850d-a31b-4685-a005-25f3cef383ed"
+						"url": "{{base-url}}/customers/78961635-96ac-43a2-8952-caeffb8560c7"
 					},
 					"response": []
 				},
@@ -117,7 +117,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"brand\":\"Yamaha\",\n    \"model\":\"R-15\",\n    \"year\":2025,\n    \"customerId\":\"1011850d-a31b-4685-a005-25f3cef383ed\"\n\n}",
+							"raw": "{\n   \"brand\":\"Bajaj\",\n    \"model\":\"Discover 125\",\n    \"year\":2021,\n    \"customerId\":\"1f7eb100-347c-49a5-a768-9c4b2c083647\"\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -166,7 +166,7 @@
 								}
 							}
 						},
-						"url": "{{base-url}}/bikes/26230177-5e31-4db4-a605-52ed1301f677"
+						"url": "{{base-url}}/bikes/7a2833bb-46dd-451a-82a9-b6be5a6e14d6"
 					},
 					"response": []
 				}
@@ -182,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\n  \"bikeId\": \"26230177-5e31-4db4-a605-52ed1301f677\",\n  \"serviceDate\": \"2025-04-23T17:40:27+00:00\",\n  \"description\": \"change both tyre\"\n}",
+							"raw": "{\n\n  \"bikeId\": \"7a2833bb-46dd-451a-82a9-b6be5a6e14d6\",\n  \"serviceDate\": \"2025-03-23T17:40:27+00:00\",\n  \"description\": \"change the engine oil\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,6 +199,15 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{base-url}}/services"
+					},
+					"response": []
+				},
+				{
+					"name": "get pending or overdue service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base-url}}/services/status"
 					},
 					"response": []
 				},

@@ -27,7 +27,7 @@ The **Bike Servicing Management API** is a backend application built with Node.j
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/RanokRaihan/bike-servicing-management-API.git
    cd bike-servicing-management-API
    ```
 
@@ -42,7 +42,7 @@ The **Bike Servicing Management API** is a backend application built with Node.j
    - Create a PostgreSQL database.
    - Add the database connection string to a `.env` file:
      ```
-     DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<database>
+     DATABASE_URL="postgresql://<user>:<password>@localhost:5432/bike_servicing?schema=public"
      ```
 
 4. Run Prisma migrations to set up the database schema:
@@ -165,31 +165,6 @@ http://localhost:8000/api
 
 ## Project Structure
 
-```
-src/
-├── app.ts                     # Express app setup
-├── config/
-│   └── prisma.config.ts       # Prisma client configuration
-├── errors/
-│   ├── ApiError.ts            # Custom error class
-│   └── globalErrorHandler.ts  # Global error handler middleware
-├── middlewares/
-│   ├── notFound.middleware.ts # 404 handler middleware
-│   └── validate.middleware.ts # Request validation middleware
-├── modules/
-│   ├── bike/                  # Bike module (controller, service, routes, interface)
-│   ├── customer/              # Customer module (controller, service, routes)
-│   └── serviceRecord/         # Service record module (controller, service, routes, interface)
-├── routes/
-│   └── index.ts               # Main router
-├── utils/
-│   ├── asyncHandler.ts        # Async error handling utility
-│   └── sendResponse.ts        # Response utility
-└── index.ts                   # Server entry point
-```
-
----
-
 ## Technologies Used
 
 - **Node.js**: JavaScript runtime.
@@ -197,7 +172,6 @@ src/
 - **TypeScript**: Type-safe JavaScript.
 - **Prisma**: ORM for database management.
 - **PostgreSQL**: Relational database.
-- **Zod**: Schema validation library.
 
 ---
 
@@ -206,7 +180,3 @@ src/
 A Postman collection is available in the file `bike-servicing-API.postman_collection.json` for testing the API endpoints.
 
 ---
-
-## License
-
-This project is licensed under the ISC License.

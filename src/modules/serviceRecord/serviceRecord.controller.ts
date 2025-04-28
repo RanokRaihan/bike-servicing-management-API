@@ -6,6 +6,7 @@ import {
   completeServiceRecordService,
   createServiceRecordService,
   getAllServiceRecordsService,
+  getPendingServicesService,
   getServiceRecordByIdService,
 } from "./serviceRecord.service";
 
@@ -60,5 +61,18 @@ export const completeServiceRecordController = asyncHandler(
       completionDate,
     });
     sendResponse(res, 200, "Service marked as completed", serviceRecord);
+  }
+);
+
+// get overdue service records
+export const getPendingServiceRecordsController = asyncHandler(
+  async (req: Request, res: Response) => {
+    const penndingServiceRecord = await getPendingServicesService();
+    sendResponse(
+      res,
+      200,
+      "Overdue or pending services fetched successfully",
+      penndingServiceRecord
+    );
   }
 );

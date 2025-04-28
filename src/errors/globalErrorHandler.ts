@@ -12,7 +12,6 @@ export const globalErrorHandler: ErrorRequestHandler = (
   let statusCode = 500;
   let message = err.message || "something went wrong!";
   const node_env = process.env.NODE_ENV;
-  console.log("globalErrorHandler", err);
   //apiError handler
   if (err instanceof ApiError) {
     statusCode = err.statusCode;

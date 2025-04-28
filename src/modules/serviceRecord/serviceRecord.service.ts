@@ -51,9 +51,7 @@ export const completeServiceRecordService = async ({
     if (completionDate) {
       updateData.completionDate = completionDate;
     }
-    console.log({
-      updateData,
-    });
+
     const serviceRecord = await prisma.serviceRecord.update({
       where: { serviceId },
       data: updateData,
